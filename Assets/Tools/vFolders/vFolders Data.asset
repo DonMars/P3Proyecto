@@ -22,6 +22,7 @@ MonoBehaviour:
     - e8a5da7927199674d9bf5e9cd8cd4361
     - 310c714c1c4a7eb44817163f2f27d2b6
     - 10a6d23213afd304f89ffb1fdc835f4e
+    - 402dfaac4d2251f4f99969047cc317f8
     values:
     - colorIndex: 0
       iconNameOrGuid: PrefabModel Icon
@@ -39,3 +40,5 @@ MonoBehaviour:
       iconNameOrGuid: 
     - colorIndex: 0
       iconNameOrGuid: Prefab Icon
+    - colorIndex: 0
+      iconNameOrGuid: cs Script Icon
