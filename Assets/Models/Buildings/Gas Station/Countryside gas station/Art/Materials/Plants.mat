@@ -41,7 +41,7 @@ Material:
     m_Floats:
     - _Cull: 2
     - _Cutoff: 0.3
-    - _WindQuality: 0
+    - _WindQuality: 3
     m_Colors:
     - _Color: {r: 1, g: 0.8623462, b: 0.6084906, a: 1}
     - _HueVariation: {r: 1, g: 0.5, b: 0, a: 0.1}
