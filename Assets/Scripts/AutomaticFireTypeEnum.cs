@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum WeaponFireTypeEnum 
+public enum AutomaticFireTypeEnum 
 {
-   SemiAutomatic,Automatic, Burst
+   SemiAutomatic, Automatic, Burst
 }

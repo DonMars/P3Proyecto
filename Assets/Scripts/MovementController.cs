@@ -67,25 +67,6 @@ namespace Profe
             return InputHandler.DecelerationInput() ? crouchSpeed : InputHandler.HorizontalAccelerationInput() ? runSpeed : walkSpeed;
         }
 
-        //private float HorizontalInput()
-        //{
-        //    return Input.GetAxis("Horizontal");
-        //}
-
-        //private float VerticalInput()
-        //{
-        //    return Input.GetAxis("Vertical");
-        //}
-
-        //private bool RunInput()
-        //{
-        //    return Input.GetKey(KeyCode.LeftShift);
-        //}
-
-        //private bool CrouchInput()
-        //{
-        //    return Input.GetKey(KeyCode.LeftControl);
-        //}
         #endregion
 
         #region Salto

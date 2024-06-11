@@ -50,6 +50,7 @@ MonoBehaviour:
         - globalObjectIdString: GlobalObjectId_V1-2-7125859dee0954a4ba4f7ef2d36b44e8-1773623360729482-1211526257
         - globalObjectIdString: GlobalObjectId_V1-2-7125859dee0954a4ba4f7ef2d36b44e8-1562665297533452-417707681
         - globalObjectIdString: GlobalObjectId_V1-2-7125859dee0954a4ba4f7ef2d36b44e8-85316282-0
+        - globalObjectIdString: GlobalObjectId_V1-2-7125859dee0954a4ba4f7ef2d36b44e8-1504799034-0
         values:
         - colorIndex: 8
           iconNameOrGuid: 
@@ -71,3 +72,5 @@ MonoBehaviour:
           iconNameOrGuid: 
         - colorIndex: 0
           iconNameOrGuid: MeshCollider Icon
+        - colorIndex: 0
+          iconNameOrGuid: AvatarMask On Icon

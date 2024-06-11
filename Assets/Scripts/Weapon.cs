@@ -1,27 +1,29 @@
 using System;
 using UnityEngine;
 
-/// <summary>
-/// Van a realizar el disparo Automatico
-/// Este debe de funcionar con el clic izquierdo del mouse
-/// Y deben de usar todas las variables
-/// Tambien se debe de programar la recarga del arma (feedback visual como un cisculo en el hud, o que en donde aparezcan las balas se escriba Reloading)
-/// 
-/// El disparo debe de funcionar por raycast.
-/// Solo puedes recargar si tienes menos de la magazineSize
-/// Al recargar se le deben de sumar balas de la maxAmmoCapacity
-/// Debe de disparar automaticamente usando el fireRate del arma
-/// </summary>
-public class Weapon : MonoBehaviour
+public abstract class Weapon : MonoBehaviour
 {
-    [SerializeField] private float range;
-    [SerializeField] private WeaponSO weaponStats;
-    [SerializeField] private LayerMask layers;
+    [SerializeField] protected WeaponStatsSO weaponStats;
+    [SerializeField] protected LayerMask layers;
 
+    public bool hasAmmo => weaponStats.ammo > 0;
+
+    public abstract void Shoot();
+
+    public abstract void Aim();
+
+    public abstract void Reload();
+
+    public virtual void SpecialAction()
+    {
+        Debug.Log("Soy un arma :)");
+    }
+
+    #region Old
     private void Start()
     {
-        weaponStats.ammo = weaponStats.maxAmmoCappacity;
-        Debug.Log(weaponStats.ammo);
+        //weaponStats.ammo = weaponStats.maxAmmoCapacity;
+        //Debug.Log(weaponStats.ammo);
     }
 
     private Ray cameraRay;
@@ -35,19 +37,19 @@ public class Weapon : MonoBehaviour
 
     private RaycastHit hit;
 
-    private void Reload()
-    {
-        if (Input.GetKeyDown(KeyCode.R) && weaponStats.ammo < weaponStats.maxAmmoCappacity)
-        {
-            weaponStats.ammo = weaponStats.maxAmmoCappacity;
-        }
-    }
+    //private void Reload()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.R) && weaponStats.ammo < weaponStats.maxAmmoCapacity)
+    //    {
+    //        weaponStats.ammo = weaponStats.maxAmmoCapacity;
+    //    }
+    //}
 
     private void AutomaticFire()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0) && weaponStats.ammo > 0)
         {
-            if (Physics.Raycast(cameraRay, out hit, range, layers))
+            if (Physics.Raycast(cameraRay, out hit, 20f, layers))
             {
                 try
                 {
@@ -68,13 +70,12 @@ public class Weapon : MonoBehaviour
     }
 
 #if UNITY_EDITOR
-    
     [ExecuteInEditMode]
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
-        Gizmos.DrawRay(cameraRay.origin, cameraRay.direction * range);
+        Gizmos.DrawRay(cameraRay.origin, cameraRay.direction * 20f);
     }
 #endif
-
+    #endregion
 }

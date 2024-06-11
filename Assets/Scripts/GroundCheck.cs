@@ -2,15 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class GroundCheck : MonoBehaviour
 {
-
     [SerializeField] private float distance;
     [SerializeField] private Transform origin;
     [SerializeField] private LayerMask groundLayers;
-
 
     private void OnDrawGizmos()
     {
@@ -27,5 +24,4 @@ public class GroundCheck : MonoBehaviour
     {
         return new Ray(origin.position,Vector3.down);
     }
-
 }

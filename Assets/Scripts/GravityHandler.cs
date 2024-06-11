@@ -8,7 +8,7 @@ public class GravityHandler : MonoBehaviour
 
     private GroundCheck groundCheck;
     private Rigidbody rb;
-    [SerializeField]private float acceleration = 4;
+    [SerializeField] private float acceleration = 4;
 
     private void Start()
     {
