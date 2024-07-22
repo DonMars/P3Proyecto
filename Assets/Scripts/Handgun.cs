@@ -2,20 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Handgun : Weapon
+namespace WeaponSystem
 {
-    public override void Aim()
-    {
-        
-    }
 
-    public override void Shoot()
+    public class Handgun : Weapon
     {
-        
-    }
+        [SerializeField] internal ReloadTypeEnum reloadType;
+        [SerializeField] internal int bulletPerReload;
+        [SerializeField] internal float reloadRate;
 
-    public override void Reload()
-    {
-        
+        public override void Aim()
+        {
+
+        }
+
+        public override void Shoot()
+        {
+
+        }
+
+        public override void Reload()
+        {
+
+        }
     }
 }

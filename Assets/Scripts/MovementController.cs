@@ -51,14 +51,12 @@ namespace Profe
         }
 
         #region Movimiento
-
         [SerializeField]private  float walkSpeed = 5.5f;
         [SerializeField]private float runSpeed = 7.7f;
         [SerializeField]private float crouchSpeed = 3.9f;
 
         private void Movement()
         {
-
             rbPlayer.velocity = transform.localRotation * new Vector3(InputHandler.HorizontalInput(), 0, InputHandler.VerticalInput()) * (Time.deltaTime * Speed());
         }
 
@@ -66,11 +64,9 @@ namespace Profe
         {
             return InputHandler.DecelerationInput() ? crouchSpeed : InputHandler.HorizontalAccelerationInput() ? runSpeed : walkSpeed;
         }
-
         #endregion
 
         #region Salto
-
         [SerializeField] private float jumpForce = 10;
 
         private void Jump()
@@ -85,7 +81,6 @@ namespace Profe
         {
             return Input.GetKey(KeyCode.Space);
         }
-
         #endregion
     }
 }

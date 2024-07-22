@@ -3,65 +3,69 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponHandler : MonoBehaviour
+namespace WeaponSystem
 {
-    [SerializeField] private Weapon[] weapons;
-    [SerializeField] private Weapon currentWeapon;
-    [SerializeField] private int actualWeaponIndex = 0;
 
-    private void Start()
+    public class WeaponHandler : MonoBehaviour
     {
-        currentWeapon = weapons[actualWeaponIndex];
-        Debug.Log("Current weapon has ammo? " + (currentWeapon.hasAmmo ? "Yes" : "No"));
-    }
+        [SerializeField] internal Weapon[] weapons;
+        [SerializeField] internal Weapon currentWeapon;
+        [SerializeField] internal int actualWeaponIndex = 0;
 
-    private void Update()
-    {
-        SwitchWeapon();
-        SpecialActionInput();
-    }
-
-    private void ShootInput()
-    {
-        if (InputHandler.ShootInput() && currentWeapon.hasAmmo)
+        private void Start()
         {
-            currentWeapon.Shoot();
+            currentWeapon = weapons[actualWeaponIndex];
+            Debug.Log("Current weapon has ammo? " + (currentWeapon.hasAmmo ? "Yes" : "No"));
         }
-    }
 
-    private void AimInput()
-    {
-        if (InputHandler.AimInput())
+        private void Update()
         {
-            currentWeapon.Aim();
+            SwitchWeapon();
+            SpecialActionInput();
         }
-    }
 
-    private void ReloadInput()
-    {
-        if (InputHandler.ReloadInput())
+        private void ShootInput()
         {
-            currentWeapon.Reload();
+            if (InputHandler.ShootInput() && currentWeapon.hasAmmo)
+            {
+                currentWeapon.Shoot();
+            }
         }
-    }
 
-    private void SpecialActionInput()
-    {
-        if (InputHandler.SpecialActionInput())
+        private void AimInput()
         {
-            currentWeapon.SpecialAction();
+            if (InputHandler.AimInput())
+            {
+                currentWeapon.Aim();
+            }
         }
-    }
 
-    private void SwitchWeapon()
-    {
-        if (InputHandler.MouseScroll() > 0)
-            actualWeaponIndex = actualWeaponIndex >= weapons.Length - 1 ? 0 : actualWeaponIndex + 1;
-        else if (InputHandler.MouseScroll() < 0)
-            actualWeaponIndex = actualWeaponIndex <= 0 ? weapons.Length - 1 : actualWeaponIndex - 1;
-        else
-            return;
+        private void ReloadInput()
+        {
+            if (InputHandler.ReloadInput())
+            {
+                currentWeapon.Reload();
+            }
+        }
 
-        currentWeapon = weapons[actualWeaponIndex];
+        private void SpecialActionInput()
+        {
+            if (InputHandler.SpecialActionInput())
+            {
+                currentWeapon.SpecialAction();
+            }
+        }
+
+        private void SwitchWeapon()
+        {
+            if (InputHandler.MouseScroll() > 0)
+                actualWeaponIndex = actualWeaponIndex >= weapons.Length - 1 ? 0 : actualWeaponIndex + 1;
+            else if (InputHandler.MouseScroll() < 0)
+                actualWeaponIndex = actualWeaponIndex <= 0 ? weapons.Length - 1 : actualWeaponIndex - 1;
+            else
+                return;
+
+            currentWeapon = weapons[actualWeaponIndex];
+        }
     }
 }

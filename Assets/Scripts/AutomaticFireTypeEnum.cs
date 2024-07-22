@@ -6,3 +6,8 @@ public enum AutomaticFireTypeEnum
 {
    SemiAutomatic, Automatic, Burst
 }
+
+public enum ReloadTypeEnum
+{
+    Magazine, Bullet
+}
