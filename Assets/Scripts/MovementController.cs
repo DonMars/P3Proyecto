@@ -42,11 +42,12 @@ namespace Profe
 
         private void Update()
         {
-            Movement();
+            
         }
 
         private void FixedUpdate()
         {
+            Movement();
             Jump();
         }
 
