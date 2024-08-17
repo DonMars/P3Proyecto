@@ -24,6 +24,7 @@ MonoBehaviour:
     - 10a6d23213afd304f89ffb1fdc835f4e
     - 402dfaac4d2251f4f99969047cc317f8
     - 11787425957a79941a534a6e6217f972
+    - a6683e960563bad459f4d742730489b0
     values:
     - colorIndex: 0
       iconNameOrGuid: PrefabModel Icon
@@ -45,3 +46,5 @@ MonoBehaviour:
       iconNameOrGuid: cs Script Icon
     - colorIndex: 0
       iconNameOrGuid: Light Icon
+    - colorIndex: 0
+      iconNameOrGuid: AudioSource Icon

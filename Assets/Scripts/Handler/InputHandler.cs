@@ -47,7 +47,7 @@ public class InputHandler : MonoBehaviour
 
     public static bool ShootInput()
     {
-        return Input.GetKey(inputConfigCopy.shoot);
+        return Input.GetKeyDown(inputConfigCopy.shoot);
     }
 
     public static bool AimInput()

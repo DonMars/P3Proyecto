@@ -12,6 +12,8 @@ namespace WeaponSystem
         [SerializeField] internal Weapon currentWeapon;
         [SerializeField] internal int actualWeaponIndex = 0;
 
+        public AudioSource disparoSFX;
+
         private void Start()
         {
             currentWeapon = weapons[actualWeaponIndex];
@@ -21,7 +23,8 @@ namespace WeaponSystem
         private void Update()
         {
             SwitchWeapon();
-            SpecialActionInput();
+            ShootInput();
+            //SpecialActionInput();
         }
 
         private void ShootInput()
